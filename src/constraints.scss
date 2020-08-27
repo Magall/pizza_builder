@@ -1,0 +1,16 @@
+//Colors
+$primary: red;
+$gray:#eee;
+
+//Spacing
+$small-spacing:8px;
+$medium-spacing:16px;
+$big-spacing:32px;
+
+//fontsize
+$normal:14px;
+
+//shortcuts
+.container{
+    padding: $small-spacing;
+}
