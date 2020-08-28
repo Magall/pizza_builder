@@ -1,12 +1,9 @@
 <template>
   <div id="home">
-    {{ getSabores() }}
     <h3>Sabor ({{ getLength() }}/2)</h3>
     <SaborCard :sabor="sabor" v-for="sabor in sabores" :key="sabor" />
-
     <PizzaModal @close="showModal = false" v-if="showModal" />
     <h3>Borda</h3>
-    {{ getSaborBorda() }}
     <BordaSection :bordas="borda" />
     <h3>Tamanho</h3>
     <TamanhoSection :tamanhos="tamanhos" />

@@ -1,0 +1,30 @@
+#BebidaCard{
+    background:white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:8px;
+    border-radius: 8px;
+    img:first-child{
+        width: 64px;
+        height: 64px;;
+        border-radius: 100%;
+    }
+    .info{
+        display: flex;
+        h3{
+            margin-right: 16px;
+        }
+    }
+    .buttons{
+        button{
+            border-radius: 50%;
+            border:none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        button{
+            margin-right: 8px;
+        }
+    }
+}

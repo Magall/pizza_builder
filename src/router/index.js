@@ -10,6 +10,17 @@ Vue.use(VueRouter)
     name: 'Home',
     component: () => import('../views/Home/Home.vue')
   },
+  {
+    path: '/bebidas',
+    name: 'Bebidas',
+    component: () => import('../views/Bebidas/Bebidas.vue')
+  },
+  {
+    path: '/pedido',
+    name: 'Pedido',
+    component: () => import('../views/Pedido/Pedido.vue')
+  },
+  
   
 ]
 

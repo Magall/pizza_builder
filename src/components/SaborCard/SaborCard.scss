@@ -1,26 +1,29 @@
-#saborCard{
-    display: flex;
-    justify-content: space-between;
-    border:1px solid white;
-    border-radius: 8px;
-    padding:8px;
-    color: #000;
-    background:white;
-    font-weight: bold;
-    margin-bottom: $small-spacing;
-    p{
-        text-transform: capitalize;
-    }
-    button{
-        // background: white;
-       font-weight: bolder;
-       color: black;
-       font-size: 18px;
-       border-radius: 16px;
-       border: 1px solid white
-  
+#saborCard {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 8px;
+  color: #000;
+  background: white;
+  font-weight: bold;
+  margin-bottom: $small-spacing;
+  align-items: center;
+  p {
+    text-transform: capitalize;
+  }
+  .sabores {
       
-
+    button {
+      // background: white;
+      font-weight: bolder;
+      color: black;
+      font-size: 18px;
+      border-radius: 16px;
+      border: 1px solid white;
     }
-    
+    .first{
+      margin-right: 8px;  
+    }
+  }
 }

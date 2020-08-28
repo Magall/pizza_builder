@@ -2,7 +2,7 @@
   <div id="saborCard">
     <p>{{ sabor }}</p>
     <div class="sabores">
-      <button @click="apagarSabor()" v-if="this.saborInserido()">-</button>
+      <button class="first" @click="apagarSabor()" v-if="this.saborInserido()">-</button>
       <button v-if="this.saboresCheio()" @click="inserirSabor()">+</button>
     </div>
   </div>
