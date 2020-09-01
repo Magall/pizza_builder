@@ -10,7 +10,7 @@
           v-model="tamanho"
         />
         <label :for="t.tamanho"
-          ><span>{{ t.tamanho }} +R$ {{ t.preco }}</span></label
+          ><span>{{ t.tamanho }}</span></label
         >
       </div>
     </div>

@@ -1,5 +1,6 @@
 <template>
   <div id="bebidas">
+    <h2>Bebidas</h2>
     <BebidaCard  :img="bebida.img" :name="bebida.name" :price="bebida.price"  v-for='bebida in bebidas' :key="bebida.name" />
     <router-link  to="/pedido"><button>Ver pedido</button></router-link>
   </div>

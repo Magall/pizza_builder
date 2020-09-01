@@ -1,6 +1,7 @@
 <template>
   <div id="bordaSection" class="container">
     <div class="inputs">
+       
       <div v-for="b in bordas" class="input" :key="b.sabor">
         <input
           type="radio"
@@ -10,7 +11,7 @@
           v-model="borda"
         />
         <label :for="b.sabor"
-          ><span>{{ b.sabor }} +R$ {{ b.preco }}</span></label
+          ><span>{{ b.sabor }}</span></label
         >
       </div>
     </div>

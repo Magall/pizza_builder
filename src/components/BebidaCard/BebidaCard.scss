@@ -27,4 +27,7 @@
             margin-right: 8px;
         }
     }
+    @media screen and (min-device-width: 1200px) {
+        width: 500px;
+    }
 }

@@ -1,14 +1,24 @@
 <template>
   <div id="home">
     <h3>Sabor ({{ getLength() }}/2)</h3>
-    <SaborCard :sabor="sabor" v-for="sabor in sabores" :key="sabor" />
+    <div class="saborContainer">
+      <SaborCard :sabor="sabor" v-for="sabor in sabores" :key="sabor" />
+    </div>
     <PizzaModal @close="showModal = false" v-if="showModal" />
-    <h3>Borda</h3>
-    <BordaSection :bordas="bordas" />
-    <h3>Tamanho</h3>
-    <TamanhoSection :tamanhos="tamanhos" />
-    <button @click="adicionarPizza()">Nova Pizza</button>
-    <button @click="goToBebidas()">Escolher Bebida</button>
+    <div class="desktop">
+      <div class="desktopContainer">
+        <h3>Borda</h3>
+        <BordaSection :bordas="bordas" />
+      </div>
+      <div class="desktopContainer">
+        <h3>Tamanho</h3>
+        <TamanhoSection :tamanhos="tamanhos" />
+      </div>
+    </div>
+    <div class="desktopButtonContainer">
+      <button @click="adicionarPizza()">Nova Pizza</button>
+      <button @click="goToBebidas()">Escolher Bebida</button>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
