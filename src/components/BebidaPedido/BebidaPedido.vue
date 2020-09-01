@@ -7,7 +7,7 @@
 <script>
 export default {
     name:"BebidaPedido",
-    props:["bebida","id"],
+    props:["bebida","id","price"],
     methods:{
         removerBebida(){
             this.$store.commit("removerBebidaId",this.id)

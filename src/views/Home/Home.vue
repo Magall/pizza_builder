@@ -90,17 +90,13 @@ export default {
       const sabores = this.getLength();
       const borda = this.getSaborBorda();
       //Caso nenhum elemento esteja marcado
-      console.log(tamanho + " " + sabores + " " + borda);
+
       if (tamanho === "" && sabores === 0 && borda === "") {
         console.log("a");
         return true;
-      } 
-      else if (tamanho === "" || sabores === 0 || borda === "") {
-        console.log("b");
+      } else if (tamanho === "" || sabores === 0 || borda === "") {
         return false;
-      }
-       else {
-         console.log("c")
+      } else {
         return true;
       }
     },

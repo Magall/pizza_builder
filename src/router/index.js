@@ -20,6 +20,11 @@ Vue.use(VueRouter)
     name: 'Pedido',
     component: () => import('../views/Pedido/Pedido.vue')
   },
+  {
+    path: '/dadosEntrega',
+    name: 'DadosEntrega',
+    component: () => import('../views/DadosEntrega/DadosEntrega.vue')
+  },
   
   
 ]

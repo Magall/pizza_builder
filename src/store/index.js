@@ -21,7 +21,7 @@ export default new Vuex.Store({
         (obj["borda"] = state.bordaEscolhida),
         (obj["tamanho"] = state.tamanho),
         (obj["preco"] = state.precoPizza);
-
+      //Validação para não inserir uma pizza vazia.
       if (
         (state.saboresEscolhidos.length === 0 &&
           state.bordaEscolhida === "" &&

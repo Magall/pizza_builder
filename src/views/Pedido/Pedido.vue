@@ -8,7 +8,7 @@
       :preco="n.preco"
       :id="index"
       v-for="(n, index) in normalizedPizzas"
-      :key="n.sabores+index+borda"
+      :key="n.sabores+index"
     />
     <BebidaPedido
       :bebida="bebida"
@@ -16,9 +16,11 @@
       v-for="(bebida, index) in bebidas"
       :key="bebida + index"
     />
-    <textarea name="" id="" cols="43" rows="10" placeholder="Observações..."></textarea>
-    <button @click="ConfirmarPedido()"> Dados Entrega</button>
-    {{ getBebidas() }}
+    <h3>Valor do pedido: R$ {{calcularPreco()}}</h3>
+    <textarea name="" id="" cols="43" rows="10" placeholder="Observações..." class="comments"></textarea>
+  
+    <button @click="dadosEntrega()"> Dados Entrega</button>
+
   </div>
 </template>
 <script>
@@ -32,8 +34,18 @@ export default {
       const bebidas = this.$store.getters.getBebidas;
       return bebidas;
     },
-    confirmarPedido(){
-      this.$router.push('/formulario')
+    dadosEntrega(){
+      this.$router.push('/dadosEntrega')
+    },
+    calcularPreco(){
+      let preco = 0;
+      this.bebidas.forEach((bebida)=>{
+        preco +=Number(bebida.price)
+      }) 
+      this.normalizedPizzas.forEach((pizza)=>{
+        preco+=pizza.preco
+      })
+      return preco;
     }
   },
   computed: {
