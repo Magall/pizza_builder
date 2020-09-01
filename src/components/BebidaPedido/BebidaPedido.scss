@@ -1,0 +1,14 @@
+#BebidaPedido{
+    display: flex;
+    background: white;
+    margin:8px;
+    padding:8px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius:8px;
+    button{
+        font-weight: bolder;
+        border-radius: 50%;
+        border:none;
+    }
+}

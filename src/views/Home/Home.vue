@@ -4,11 +4,11 @@
     <SaborCard :sabor="sabor" v-for="sabor in sabores" :key="sabor" />
     <PizzaModal @close="showModal = false" v-if="showModal" />
     <h3>Borda</h3>
-    <BordaSection :bordas="borda" />
+    <BordaSection :bordas="bordas" />
     <h3>Tamanho</h3>
     <TamanhoSection :tamanhos="tamanhos" />
-    <button @click="adicionarPedido()">Nova Pizza</button>
-    <button @click="getPedidos()">Escolher Bebida</button>
+    <button @click="adicionarPizza()">Nova Pizza</button>
+    <button @click="goToBebidas()">Escolher Bebida</button>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -31,6 +31,15 @@ export default {
   },
 
   methods: {
+    goToBebidas() {
+      if (this.validarPizza()) {
+        this.setTamanhoPrice();
+        store.commit("adicionarPizza");
+        this.$router.push("/bebidas");
+      } else {
+        this.showModal = true;
+      }
+    },
     getPedidos() {
       console.log(store.getters.getPedidos);
     },
@@ -46,9 +55,31 @@ export default {
     getTamanho() {
       return this.$store.getters.getTamanho;
     },
-    adicionarPedido() {
+    //mock preço deveria ser calculado pelo backend
+    setTamanhoPrice() {
+      const tamanho = this.$store.getters.getTamanho;
+      let pizzaPrice = 0;
+      const pizzas = this.$store.getters.getPizzas;
+      switch (tamanho) {
+        case "brotinho":
+          pizzaPrice = 20;
+          break;
+        case "média":
+          pizzaPrice = 30;
+          break;
+        case "grande":
+          pizzaPrice = 40;
+          break;
+        case "gigante":
+          pizzaPrice = 45;
+      }
+      store.commit("incrementarPrecoPizza", pizzaPrice);
+    },
+
+    adicionarPizza() {
       if (this.validarPizza()) {
-        store.commit("adicionarPedido");
+        this.setTamanhoPrice();
+        store.commit("adicionarPizza");
       } else {
         this.showModal = true;
       }
@@ -58,10 +89,18 @@ export default {
       const tamanho = this.getTamanho();
       const sabores = this.getLength();
       const borda = this.getSaborBorda();
-
-      if (tamanho === 0 || sabores === "" || borda === "") {
+      //Caso nenhum elemento esteja marcado
+      console.log(tamanho + " " + sabores + " " + borda);
+      if (tamanho === "" && sabores === 0 && borda === "") {
+        console.log("a");
+        return true;
+      } 
+      else if (tamanho === "" || sabores === 0 || borda === "") {
+        console.log("b");
         return false;
-      } else {
+      }
+       else {
+         console.log("c")
         return true;
       }
     },
@@ -81,18 +120,19 @@ export default {
         "palmito",
         "quatro queijos",
       ],
-      borda: [
+      bordas: [
         { sabor: "nenhum", preco: 0 },
         { sabor: "cheddar", preco: 3 },
         { sabor: "creamcheese", preco: 4 },
         { sabor: "catupiry", preco: 5 },
       ],
       tamanhos: [
-        { tamanho: "brotinho", preco: 25 },
-        { tamanho: "média", preco: 35 },
-        { tamanho: "grande", preco: 40 },
-        { tamanho: "gigante", preco: 50 },
+        { tamanho: "brotinho" },
+        { tamanho: "média" },
+        { tamanho: "grande" },
+        { tamanho: "gigante" },
       ],
+      precosTamanho: [],
     };
   },
 };

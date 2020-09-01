@@ -1,0 +1,33 @@
+#pizzaCard {
+  background: white;
+  margin: 8px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    button {
+        // background: white;
+        font-weight: bolder;
+        color: black;
+        font-size: 15px;
+        border-radius: 100%;
+        border: 1px solid white;
+      }
+  }
+  h4 {
+    margin-top: 0;
+  }
+  .pizzaItems {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 8px;
+    justify-content: left;
+    text-align: left;
+  }
+  .item {
+    font-weight: bold;
+  }
+}

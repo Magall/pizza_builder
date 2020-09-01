@@ -1,31 +1,55 @@
 <template>
   <div>
     <h1>Pedido</h1>
-    <div v-for="n in normalizedPizzas" :key="n[0]">
-        <p>Sabores: {{n[0]}} </p> 
-        <p>Borda: {{n[1]}}</p>
-        <p>Tamanho: {{n[2]}}</p>
-    </div>
-    {{ getPizzas() }}
+    <PizzaCard
+      :sabores="n.sabores"
+      :tamanho="n.tamanho"
+      :borda="n.borda"
+      :preco="n.preco"
+      :id="index"
+      v-for="(n, index) in normalizedPizzas"
+      :key="n.sabores+index+borda"
+    />
+    <BebidaPedido
+      :bebida="bebida"
+      :id="index"
+      v-for="(bebida, index) in bebidas"
+      :key="bebida + index"
+    />
+    <textarea name="" id="" cols="43" rows="10" placeholder="Observações..."></textarea>
+    <button @click="ConfirmarPedido()"> Dados Entrega</button>
+    {{ getBebidas() }}
   </div>
 </template>
 <script>
+import PizzaCard from "@/components/PizzaCard/PizzaCard";
+import BebidaPedido from "@/components/BebidaPedido/BebidaPedido";
 export default {
   name: "Pedido",
+  components: { PizzaCard, BebidaPedido },
   methods: {
-    getPizzas() {
-      const pizzas = this.$store.getters.getNormalizedPizzas;
-
-
-      return pizzas;
+    getBebidas() {
+      const bebidas = this.$store.getters.getBebidas;
+      return bebidas;
     },
+    confirmarPedido(){
+      this.$router.push('/formulario')
+    }
   },
   computed: {
     normalizedPizzas: {
       get() {
-        return this.$store.getters.getNormalizedPizzas;;
+        return this.$store.getters.getPizzas;
       },
     },
-  }
+    bebidas: {
+      get() {
+        return this.$store.getters.getBebidas;
+      },
+    },
+  },
 };
 </script>
+<style lang="scss" scoped>
+  @import'./Pedido.scss'
+</style>

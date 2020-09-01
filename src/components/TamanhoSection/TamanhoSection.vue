@@ -8,7 +8,6 @@
           :value="t.tamanho"
           :id="t.tamanho"
           v-model="tamanho"
-
         />
         <label :for="t.tamanho"
           ><span>{{ t.tamanho }} +R$ {{ t.preco }}</span></label
@@ -28,18 +27,12 @@ export default {
         return store.getters.getTamanho;
       },
       set(val) {
-        store.commit("escolherTamanho",val) ;
+        
+        store.commit("escolherTamanho", val);
       },
     },
   },
-  methods: {
-    alterarTamanho(t) {
-      store.commit("escolherTamanho", t.tamanho);
-    },
-    getTamanho() {
-      return store.getters.getTamanho;
-    },
-  },
+
 };
 </script>
 <style lang="scss" scoped>

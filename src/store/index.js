@@ -1,96 +1,128 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    saboresEscolhidos:[],
-    bebidasEscolhidas:[],
-    bordaEscolhida:'',
-    tamanho:'',
-    pizzas:[],
-    
-
+    saboresEscolhidos: [],
+    bebidasEscolhidas: [],
+    bordaEscolhida: "",
+    tamanho: "",
+    precoPizza: 0,
+    pizzas: [],
   },
   mutations: {
-    adicionarPedido(state){
-      let arr =[];
-        arr.push(...state.saboresEscolhidos,state.bordaEscolhida,state.tamanho);
-        state.pizzas.push(arr);
-        state.saboresEscolhidos=[];
-        state.bordaEscolhida='';
-        state.tamanho='';
+    adicionarPizza(state) {
+      //Validação para não inserir pizza
+
+      let obj = {};
+      (obj["sabores"] = state.saboresEscolhidos.join()),
+        (obj["borda"] = state.bordaEscolhida),
+        (obj["tamanho"] = state.tamanho),
+        (obj["preco"] = state.precoPizza);
+
+      if (
+        (state.saboresEscolhidos.length === 0 &&
+          state.bordaEscolhida === "" &&
+          state.tamanho === "") === false
+      ) {
+        state.pizzas.push(obj);
+      }
+
+      state.saboresEscolhidos = [];
+      state.bordaEscolhida = "";
+      state.tamanho = "";
+      state.precoPizza = 0;
     },
-    adicionarSabor(state,sabor){
-      state.saboresEscolhidos.push(sabor)
+    adicionarSabor(state, sabor) {
+      state.saboresEscolhidos.push(sabor);
     },
-    removerSabor(state,sabor){
+    removerSabor(state, sabor) {
       const index = state.saboresEscolhidos.indexOf(sabor);
       state.saboresEscolhidos.splice(index, 1);
     },
-    alterarValorBorda(state,valor){
-      state.precoBorda =valor;
+
+    incrementarPrecoPizza(state, valor) {
+      state.precoPizza += valor;
     },
-    
-    escolherBorda(state,valor){
-      state.bordaEscolhida =valor;
+    escolherBorda(state, valor) {
+      state.bordaEscolhida = valor;
     },
-    escolherTamanho(state,value){
-      state.tamanho=value;
+    escolherTamanho(state, value) {
+      state.tamanho = value;
     },
-    adicionarBebida(state,value){
+    adicionarBebida(state, value) {
       state.bebidasEscolhidas.push(value);
     },
-    removerBebida(state,bebida){
-      const index = state.bebidasEscolhidas.indexOf(bebida);
+    removerBebidaId(state, id) {
+      state.bebidasEscolhidas.splice(id, 1);
+    },
+    removerBebida(state, bebida) {
+      let index = -1;
+      state.bebidasEscolhidas.forEach((el, idx) => {
+        if (el.name === bebida) {
+          index = idx;
+          return;
+        }
+      });
+
       state.bebidasEscolhidas.splice(index, 1);
     },
-  
-
-
+    removerPizza(state, id) {
+      state.pizzas.splice(id, 1);
+    },
   },
-  actions: {
-  },
+  actions: {},
   getters: {
-    getSaboresEscolhidos (state) {
+    getSaboresEscolhidos(state) {
       return state.saboresEscolhidos;
     },
-    getValorPizza(state){
+    getValorPizza(state) {
       return state.valorPizza;
     },
-    getBorda(state){
+    getBorda(state) {
       return state.bordaEscolhida;
     },
-    getPizzas(state){
+    getPizzas(state) {
       return state.pizzas;
     },
-    getTamanho(state){
+    getTamanho(state) {
       return state.tamanho;
     },
-    countBebida: (state) =>(bebida) => {
-      let count=0;
-      for(let i=0;i<state.bebidasEscolhidas.length;i++){
-        if(state.bebidasEscolhidas[i]===bebida){
-          count++
+    countBebida: (state) => (bebida) => {
+      let count = 0;
+      for (let i = 0; i < state.bebidasEscolhidas.length; i++) {
+        if (state.bebidasEscolhidas[i].name === bebida) {
+          count++;
         }
       }
       return count;
     },
-    getNormalizedPizzas(state){
-      let pizzacopy = [...state.pizzas]
-      for (let i = 0; i < pizzacopy.length; i++) {
-        if (pizzacopy[i].length === 4) {
-        /*Caso a pizza seja de dois sabores concatena-se os dois sabores em
-         uma string e remove-se a posição do segundo sabor para não ficar duplicado*/
-          pizzacopy[i][0] = pizzacopy[i][0] +","+ pizzacopy[i][1];
-          pizzacopy[i].splice(1, 1);
-        }
-      }
-      return pizzacopy;
-    }
-    
+    countBebidasPedido(state) {
+      let obj = {};
+      const bebidas = [...new Set(state.bebidasEscolhidas)];
+
+      bebidas.forEach((bebida) => {
+        obj[bebida] = state.bebidasEscolhidas.reduce((acc, cur) => {
+          if (cur === bebida) {
+            acc++;
+          }
+          return acc;
+        }, 0);
+      });
+
+      var op = [];
+      Object.keys(obj).forEach(function(key) {
+        var aux = {};
+        (aux["sabor"] = key), (aux["quantidade"] = obj[key]);
+        op.push(aux); //push newly created object in `op`array
+      });
+      return op;
+    },
+    getBebidas(state) {
+      return state.bebidasEscolhidas.sort();
+    },
   },
-  modules: {
-  }
-})
+  modules: {},
+});

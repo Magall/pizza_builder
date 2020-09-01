@@ -13,9 +13,9 @@
       <div id="mySidenav" class="sidenav" :style="{ width: wid + 'px' }">
         <span @click ="closeNav()">X</span>
         <ul>
-          <li @click="closeNav()"><router-link to="/"> Pizza</router-link></li>
-          <li @click="closeNav()"><router-link to="/bebidas"> Bebidas</router-link></li>
-          <li @click="closeNav()"><router-link to="/pedido"> Meu Pedido</router-link></li>
+          <router-link to="/"><li @click="closeNav()"> Pizza</li></router-link>
+          <router-link to="/bebidas"><li @click="closeNav()"> Bebidas</li></router-link>
+          <router-link to="/pedido"><li @click="closeNav()"> Meu Pedido</li></router-link>
           
         </ul> 
       </div>

@@ -18,7 +18,8 @@ export default {
   props: ["img", "name", "price"],
   methods: {
     addBebida() {
-      this.$store.commit("adicionarBebida", this.name);
+      this.$store.commit("adicionarBebida", {name:this.name,price:this.price});
+    
     },
     countBebida() {
       return this.$store.getters.countBebida(this.name);
