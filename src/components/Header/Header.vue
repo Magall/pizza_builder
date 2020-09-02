@@ -2,6 +2,7 @@
   <div>
     <nav>
       <img src="@/assets/pizza.png" alt="Logo" srcset="" />
+      <h3>Pizza Builder</h3>
       <img
         src="@/assets/menu_mobile.svg"
         alt="Botão Menu"
