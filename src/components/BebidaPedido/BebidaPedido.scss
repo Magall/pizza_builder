@@ -11,4 +11,7 @@
         border-radius: 50%;
         border:none;
     }
+    @media screen and (min-device-width: 1200px) {
+        width:300px
+    }
 }

@@ -30,4 +30,7 @@
   .item {
     font-weight: bold;
   }
+  @media screen and (min-device-width: 1200px) {
+    width:300px
+  }
 }
