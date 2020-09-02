@@ -8,6 +8,7 @@ Skills used:
  - Media Queries
  - Sass
  - Mobile first
+ - HTML
 
 ## Project setup
 ```
