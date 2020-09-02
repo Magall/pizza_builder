@@ -1,5 +1,5 @@
 module.exports = {
-   // publicPath:'/tchambows/',
+  publicPath: '/pizzaBuilder/',
     css: {
       loaderOptions: {
         sass: {
@@ -7,4 +7,4 @@ module.exports = {
         }
       }
     }
-  };
+  };// vue.config.js
