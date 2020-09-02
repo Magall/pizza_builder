@@ -9,6 +9,11 @@
         class="menuBtn"
         @click="openNav()"
       />
+      <ul class="desktopNav">
+          <router-link to="/"><li> Pizza</li></router-link>
+          <router-link to="/bebidas"><li> Bebidas</li></router-link>
+          <router-link to="/pedido"><li> Meu Pedido</li></router-link>
+      </ul>
     </nav>
       <div id="mySidenav" class="sidenav" :style="{ width: wid + 'px' }">
         <span @click ="closeNav()">X</span>

@@ -1,3 +1,4 @@
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -41,9 +42,36 @@ nav{
     }
     ul{
         display: flex;
-        li{
-            list-style: none;
-            padding-right: 16px;
+        a{
+            text-decoration: none;
+            color:white;
+            li{
+                list-style: none;
+                padding-right: 16px;
+                text-decoration: none;
+                
+            }
         }
     }
+    .desktopNav{
+        display: none;
+    }
+}
+@media screen and (min-device-width: 1200px) {
+   
+    .sidenav{
+        display: none;
+    }
+    nav{
+        .menuBtn{
+            display: none;
+        }
+        .desktopNav{
+            display: flex;
+            a:hover{
+                text-decoration:underline white!important;
+            }
+        }
+    }
+    
 }
