@@ -1,4 +1,13 @@
-# pizza_builder
+# Pizza Builder
+
+## Description
+Vuejs aplication to built to practice. It simulates a website where a customer builds a pizza order, including pizza flavors , drinks and tells the delivery data. 
+Skills used: 
+ - Vuex
+ - Vue Router
+ - Media Queries
+ - Sass
+ - Mobile first
 
 ## Project setup
 ```
