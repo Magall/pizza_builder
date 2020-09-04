@@ -8,6 +8,10 @@ Skills used:
  - Media Queries
  - Sass
  - Mobile first
+ - HTML
+ - CSS
+ 
+ Demo running at: https://magall.github.io/pizza_builder/
 
 ## Project setup
 ```
