@@ -2,8 +2,12 @@
   <div id="saborCard">
     <p>{{ sabor }}</p>
     <div class="sabores">
-      <button class="first" @click="apagarSabor()" v-if="this.saborInserido()">-</button>
-      <button v-if="this.saboresCheio()" @click="inserirSabor()">+</button>
+      <button class="first" @click="apagarSabor()" v-if="this.saborInserido()">
+        -
+      </button>
+      <button id="plus" v-show="this.saboresCheio()" @click="inserirSabor()">
+        +
+      </button>
     </div>
   </div>
 </template>
@@ -14,10 +18,16 @@
 import store from "@/store";
 export default {
   props: ["sabor"],
-  
+  computed: {
+    sabores: {
+      get() {
+        return store.getters.getSaboresEscolhidos.length;
+      },
+    },
+  },
   methods: {
     saboresCheio() {
-      if (store.getters.getSaboresEscolhidos.length < 2) {
+      if (this.sabores < 2) {
         return true;
       } else {
         return false;

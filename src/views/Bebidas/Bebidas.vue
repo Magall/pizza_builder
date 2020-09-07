@@ -15,10 +15,10 @@ export default {
   data() {
     return {
       bebidas: [
-        { img: "cocaCola.jpg", name: "Coca-cola", price: "5" },
-        { img: "gurana.jpg", name: "Guraná", price: "5" },
-        { img: "fantaLaranja.jpg", name: "Fanta Laranja", price: "5" },
-        { img: "suco.jpg", name: "Suco de uva", price: "6" },
+        { img: "CocaCola.jpg", name: "Coca-cola", price: "5" },
+        { img: "Guarana.jpg", name: "Guraná", price: "5" },
+        { img: "FantaLaranja.jpg", name: "Fanta Laranja", price: "5" },
+        { img: "Suco.jpg", name: "Suco de uva", price: "6" },
       ],
     };
   },

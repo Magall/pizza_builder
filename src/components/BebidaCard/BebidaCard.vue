@@ -1,21 +1,22 @@
 <template>
   <div id="BebidaCard" class="container">
-    <img :src="require('@/assets/bebidas/' + img)" alt="Logo lata" srcset="" />
+    <!-- <img :src="require('@/assets/bebidas/' + img)" alt="Logo lata" srcset="" /> -->
     <div class="info">
       <h3>{{ name }}</h3>
       <h4>R${{ price }}</h4>
     </div>
     <div class="buttons">
-      <button @click="removeBebida()" :disabled="!isDisabled()">-</button>
-      <button @click="addBebida()">+</button>
+      <button id="remover" @click="removeBebida()" :disabled="!isDisabled()">-</button>
+      <button id="adicionar" @click="addBebida()">+</button>
       <span>{{ countBebida() }}</span>
     </div>
   </div>
 </template>
 <script>
+import store from "@/store"
 export default {
   name: "BebidaCard",
-  props: ["img", "name", "price"],
+  props: [ "name", "price"],
   methods: {
     addBebida() {
       this.$store.commit("adicionarBebida", {name:this.name,price:this.price});
