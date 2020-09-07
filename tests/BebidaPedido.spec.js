@@ -2,12 +2,10 @@ import { mount, createLocalVue } from "@vue/test-utils";
 import BebidaPedido from "@/components/BebidaPedido/BebidaPedido";
 import Vuex from "vuex";
 import mutations from "@/store/mutations";
-import "@testing-library/jest-dom";
 const localVue = createLocalVue();
 localVue.use(Vuex);
 describe("Testes remoção bebida", () => {
   let store;
-
   let state = {
     bebidasEscolhidas: [{ name: "guarana", price: 5 }],
   };

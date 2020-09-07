@@ -1,54 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1599486673132" clover="3.2.0">
-  <project timestamp="1599486673132" name="All files">
-    <metrics statements="54" coveredstatements="19" conditionals="11" coveredconditionals="2" methods="27" coveredmethods="9" elements="92" coveredelements="30" complexity="0" loc="54" ncloc="54" packages="2" files="4" classes="4"/>
-    <package name="components.BebidaCard">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-      <file name="BebidaCard.vue" path="C:\Workspace\free\pizza_builder\src\components\BebidaCard\BebidaCard.vue">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
-        <line num="29" count="7" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
+<coverage generated="1599488046473" clover="3.2.0">
+  <project timestamp="1599488046474" name="All files">
+    <metrics statements="24" coveredstatements="2" conditionals="7" coveredconditionals="0" methods="12" coveredmethods="2" elements="43" coveredelements="4" complexity="0" loc="24" ncloc="24" packages="2" files="2" classes="2"/>
+    <package name="components.PizzaCard">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="PizzaCard.vue" path="C:\Workspace\free\pizza_builder\src\components\PizzaCard\PizzaCard.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="29" count="1" type="stmt"/>
       </file>
     </package>
     <package name="store">
-      <metrics statements="49" coveredstatements="14" conditionals="11" coveredconditionals="2" methods="23" coveredmethods="5"/>
-      <file name="getters.js" path="C:\Workspace\free\pizza_builder\src\store\getters.js">
-        <metrics statements="25" coveredstatements="6" conditionals="4" coveredconditionals="1" methods="12" coveredmethods="2"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="18" count="10" type="stmt"/>
-        <line num="19" count="10" type="stmt"/>
-        <line num="20" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="24" count="10" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-      </file>
-      <file name="index.js" path="C:\Workspace\free\pizza_builder\src\store\index.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="5" count="1" type="stmt"/>
-      </file>
+      <metrics statements="23" coveredstatements="1" conditionals="7" coveredconditionals="0" methods="11" coveredmethods="1"/>
       <file name="mutations.js" path="C:\Workspace\free\pizza_builder\src\store\mutations.js">
-        <metrics statements="23" coveredstatements="7" conditionals="7" coveredconditionals="1" methods="11" coveredmethods="3"/>
+        <metrics statements="23" coveredstatements="1" conditionals="7" coveredconditionals="0" methods="11" coveredmethods="1"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -63,15 +27,15 @@
         <line num="33" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
       </file>
     </package>
   </project>
