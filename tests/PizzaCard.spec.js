@@ -37,8 +37,7 @@ describe("Remoção de pizzas", () => {
         tamanho: "média",
       },
     });
-    
+
     await wrapper.find("button").trigger("click");
-   
   });
 });
