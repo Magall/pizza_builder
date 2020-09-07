@@ -5,6 +5,7 @@ Vuejs aplication to built to practice. It simulates a website where a customer b
 Skills used: 
  - Vuex
  - Vue Router
+ - Unit Tests
  - Media Queries
  - Sass
  - Mobile first
