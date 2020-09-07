@@ -11,8 +11,7 @@
           v-model="borda"
         />
         <label :for="b.sabor"
-          ><span>{{ b.sabor }}</span></label
-        >
+          ><span>{{ b.sabor }}</span></label>
       </div>
     </div>
   </div>

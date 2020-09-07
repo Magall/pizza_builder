@@ -1,5 +1,6 @@
-import { mount } from "@vue/test-utils";
+import { mount,createLocalVue } from "@vue/test-utils";
 import SaborCard from "@/components/SaborCard/SaborCard";
+import Vuex from 'vuex'
 import "@testing-library/jest-dom";
 
 const localVue = createLocalVue();
