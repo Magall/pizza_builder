@@ -30,7 +30,7 @@ import SaborCard from "@/components/SaborCard/SaborCard";
 import BordaSection from "@/components/BordaSection/BordaSection";
 import TamanhoSection from "@/components/TamanhoSection/TamanhoSection";
 import PizzaModal from "@/components/PizzaModal/PizzaModal";
-import store from "@/store";
+
 export default {
   name: "Home",
   components: {
@@ -44,23 +44,23 @@ export default {
     goToBebidas() {
       if (this.validarPizza()) {
         this.setTamanhoPrice();
-        store.commit("adicionarPizza");
+        this.$store.commit("adicionarPizza");
         this.$router.push("/bebidas");
       } else {
         this.showModal = true;
       }
     },
     getPedidos() {
-      console.log(store.getters.getPedidos);
+      console.log(this.$store.getters.getPedidos);
     },
     getLength() {
-      return store.getters.getSaboresEscolhidos.length;
+      return this.$store.getters.getSaboresEscolhidos.length;
     },
     getSabores() {
       return store.getters.getSaboresEscolhidos;
     },
     getSaborBorda() {
-      return store.getters.getBorda;
+      return this.$store.getters.getBorda;
     },
     getTamanho() {
       return this.$store.getters.getTamanho;
@@ -83,13 +83,14 @@ export default {
         case "gigante":
           pizzaPrice = 45;
       }
-      store.commit("incrementarPrecoPizza", pizzaPrice);
+      this.$store.commit("incrementarPrecoPizza", pizzaPrice);
     },
 
     adicionarPizza() {
       if (this.validarPizza()) {
         this.setTamanhoPrice();
-        store.commit("adicionarPizza");
+
+        this.$store.commit("adicionarPizza");
       } else {
         this.showModal = true;
       }
@@ -99,10 +100,9 @@ export default {
       const tamanho = this.getTamanho();
       const sabores = this.getLength();
       const borda = this.getSaborBorda();
-      //Caso nenhum elemento esteja marcado
+
 
       if (tamanho === "" && sabores === 0 && borda === "") {
-        console.log("a");
         return true;
       } else if (tamanho === "" || sabores === 0 || borda === "") {
         return false;

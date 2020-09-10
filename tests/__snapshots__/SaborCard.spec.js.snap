@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`SaborCard Se dois sabores foram selecionados + some 1`] = `
-"<div id=\\"saborCard\\">
-  <p></p>
-  <div class=\\"sabores\\"><button class=\\"first\\">-</button> <button id=\\"plus\\">+</button></div>
-</div>"
-`;

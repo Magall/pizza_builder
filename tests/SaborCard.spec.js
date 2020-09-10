@@ -3,14 +3,6 @@ import SaborCard from "@/components/SaborCard/SaborCard";
 import Vuex from 'vuex'
 import "@testing-library/jest-dom";
 
-const localVue = createLocalVue();
-localVue.use(Vuex);
-
-const store = new Vuex.Store({
-  state: {
-    saboresEscolhidos: ["alice", "sdasd"],
-  },
-});
 
 describe("SaborCard", () => {
   test("Se clicar no adicionar - deve apararecer", async () => {
